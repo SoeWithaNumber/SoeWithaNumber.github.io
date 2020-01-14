@@ -1,3 +1,3 @@
 # 7bytes.github.io
 
-this is literally just something for me and my friends to use for fun
+Is now a hub for my web-based programs!!
