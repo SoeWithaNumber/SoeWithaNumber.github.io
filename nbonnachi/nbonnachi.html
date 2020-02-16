@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Metalic ratio generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <h1>Hey!</h1>
+
+    <p>If you don't know what metallic ratio means, check out <a href="https://www.youtube.com/watch?v=7lRgeTmxnlg" target = "_blank">this</a> video by Numberphile. </p>
+
+    <!--Make the form and button-->
+
+    <form id="frm1" name="frm1" class="frm1" action="index.html" method="post">
+      <div class = fac> <label for="inp">Factor: </label> <br>
+      <input type="number" name="inp" placeholder=2> <br> </div>
+      <div class = fac> <label for="len">Length: </label> <br>
+      <input type="number" name="len" placeholder=10> <br> </div>
+      <div class = fac> <input type="button" name="submit" value="Generate" onclick="generateSeq()"> </div>
+    </form>
+
+    <!--This is where our output will go-->
+
+    <p id="out"> </p>
+
+  </body>
+  <script type="text/javascript" >
+
+    //Our function. This will generate our n-bonacci sequences
+    function generateSeq(){
+
+      //Declaring variables
+      var fac = document.getElementById("frm1").inp.value;
+      var len = document.getElementById("frm1").len.value;
+      var seq = [0, 1];
+
+      /* Takes the 2nd number in the "seq" array, multiplies it by the variable "fac"
+      then adds the previous number in the array, then goes to the next number
+      in the array. Rinse and repeat until we've reached our desired length
+      */
+
+      for(i = 0; i < Math.abs(len)-2; i++){
+
+        seq.push(seq[i + 1] * fac + seq[i]);
+
+      }
+
+      //Putting the output into the HTML document.
+
+      document.getElementById("out").innerHTML = seq.join(", ");
+
+    }
+
+  </script>
+</html>
